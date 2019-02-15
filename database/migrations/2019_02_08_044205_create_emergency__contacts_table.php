@@ -17,8 +17,8 @@ class CreateEmergencyContactsTable extends Migration
             $table->increments('id');
             $table->string('nombre', 35);
             $table->string('telefono', 12);
-            // $table->integer('adress_id')->unsigned();
-            // $table->foreign('adress_id')->references('id')->on('adresses');
+            $table->integer('adress_id')->unsigned();
+            $table->foreign('adress_id')->references('id')->on('adresses');
             $table->timestamps();
         });
     }

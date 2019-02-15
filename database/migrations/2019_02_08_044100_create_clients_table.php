@@ -25,8 +25,8 @@ class CreateClientsTable extends Migration
             $table->string('numero_seguro', 15);
             $table->string('puesto', 35);
             $table->string('departamento', 35);
-            // $table->integer('adress_id')->unsigned();
-            // $table->foreign('adress_id')->references('id')->on('adresses');
+            $table->integer('adress_id')->unsigned();
+            $table->foreign('adress_id')->references('id')->on('adresses');
             $table->timestamps();
         });
     }
