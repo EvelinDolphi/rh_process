@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// rutas de pruebas
+
+Route::get('/test', function () {
+  $clients = App\Adress::all();
+  dd($clients);
+});
