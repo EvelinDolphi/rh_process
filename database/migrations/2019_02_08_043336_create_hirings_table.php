@@ -15,10 +15,10 @@ class CreateHiringsTable extends Migration
     {
         Schema::create('hirings', function (Blueprint $table) {
             $table->increments('id');
-            // $table->integer('salary_id')->unsigned();
-            // $table->foreign('salary_id')->references('id')->on('salaries');
-            // $table->integer('place_id')->unsigned();
-            // $table->foreign('place_id')->references('id')->on('places');
+            $table->integer('salary_id')->unsigned();
+            $table->foreign('salary_id')->references('id')->on('salaries');
+            $table->integer('place_id')->unsigned();
+            $table->foreign('place_id')->references('id')->on('places');
             $table->timestamps();
         });
     }

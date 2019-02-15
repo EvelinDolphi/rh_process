@@ -13,7 +13,7 @@ class CreateCivilStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('civil__statuses', function (Blueprint $table) {
+        Schema::create('civil_statuses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('soltero', 10)->nullable($value = true);
             $table->string('casado', 10)->nullable($value = true);
