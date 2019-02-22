@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Place extends Model
 {
-    //
+
+  public function hiring()
+      {
+          return $this->belongsTo('App\Hiring');
+      }
 }
