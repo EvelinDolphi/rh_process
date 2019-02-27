@@ -18,4 +18,9 @@ class Adress extends Model
         {
             return $this->belongsTo('App\Emergency_Contact');
         }
+
+        public function employee()
+        {
+            return $this->belongsTo('App\Employee');
+        }
 }

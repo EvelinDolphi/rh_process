@@ -12,4 +12,9 @@ class Emergency_Contact extends Model
   {
       return $this->hasOne('App\Adress');
   }
+
+  public function employee()
+  {
+      return $this->belongsTo('App\Employee');
+  }
 }

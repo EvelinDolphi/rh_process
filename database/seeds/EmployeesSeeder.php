@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App/Employee
 
 class EmployeesSeeder extends Seeder
 {
@@ -11,6 +12,6 @@ class EmployeesSeeder extends Seeder
      */
     public function run()
     {
-      
+    
     }
 }

@@ -15,5 +15,9 @@ class Hiring extends Model
   {
       return $this->hasOne('App\Place');
   }
-  
+
+  public function employee()
+  {
+      return $this->belongsTo('App\Employee');
+  }
 }
