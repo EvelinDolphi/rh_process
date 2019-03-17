@@ -4,16 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Place extends Model
+class Boss extends Model
 {
   protected $fillable = [
-    'area', 'delegacion',
+    'nombre',
   ];
-
-  public function hire()
-  {
-    return $this->belongsTo('App\Hire');
-  }
 
   public function department()
   {

@@ -7,8 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Salary extends Model
 {
 
-  public function hiring()
-      {
-          return $this->belongsTo('App\Hiring');
-      }
+  protected $fillable = [
+  'salario_base', 'salario_cotizacion', 'sueldo_contratacion',
+  ];
+
+
+
+  public function hire()
+  {
+    return $this->belongsTo('App\Hire');
+  }
 }

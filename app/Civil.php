@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Bank extends Model
+class Civil extends Model
 {
   protected $fillable = [
-    'name_bank', 'clabe_interbancaria', 'numero_cuenta',
+    'soltero', 'casado', 'viudo', 'divorciado', 'separado', 'numero_hijos',
   ];
 
   public function employee()

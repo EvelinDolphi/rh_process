@@ -17,9 +17,11 @@ class CreatePlacesTable extends Migration
             $table->increments('id');
             $table->string('area', 35);
             $table->string('delegacion', 35);
+            $table->timestamps();
             $table->integer('department_id')->unsigned();
             $table->foreign('department_id')->references('id')->on('departments');
-            $table->timestamps();
+            $table->integer('hire_id')->unsigned();
+            $table->foreign('hire_id')->references('id')->on('hires');
         });
     }
 

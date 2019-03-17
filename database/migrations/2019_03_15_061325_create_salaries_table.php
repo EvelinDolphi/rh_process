@@ -19,6 +19,9 @@ class CreateSalariesTable extends Migration
             $table->float('salario_cotizacion', 8,2)->nullable($value = true);
             $table->float('sueldo_contratacion', 8,2)->nullable($value = true);
             $table->timestamps();
+
+            $table->integer('hire_id')->unsigned();
+            $table->foreign('hire_id')->references('id')->on('hires');
         });
     }
 

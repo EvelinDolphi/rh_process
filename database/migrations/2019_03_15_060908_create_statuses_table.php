@@ -22,6 +22,9 @@ class CreateStatusesTable extends Migration
             $table->string('demanda', 2)->nullable($value = true);
             $table->string('penal', 2)->nullable($value = true);
             $table->timestamps();
+
+            $table->integer('employee_id')->unsigned();
+            $table->foreign('employee_id')->references('id')->on('employees');
         });
     }
 

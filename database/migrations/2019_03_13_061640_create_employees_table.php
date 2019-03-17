@@ -1,5 +1,3 @@
-
-
 <?php
 
 use Illuminate\Support\Facades\Schema;
@@ -27,17 +25,10 @@ class CreateEmployeesTable extends Migration
             $table->string('numero_seguro', 15);
             $table->string('curp', 35);
             $table->string('rfc', 35);
-            $table->integer('adress_id')->unsigned();
-            $table->foreign('adress_id')->references('id')->on('adresses');
-            $table->integer('status_id')->unsigned();
-            $table->foreign('status_id')->references('id')->on('statuses');
-            $table->integer('hiring_id')->unsigned();
-            $table->foreign('hiring_id')->references('id')->on('hirings');
-            $table->integer('emergency_contact_id')->unsigned();
-            $table->foreign('emergency_contact_id')->references('id')->on('emergency_contacts');
-            $table->integer('civil_status_id')->unsigned();
-            $table->foreign('civil_status_id')->references('id')->on('civil_statuses');
             $table->timestamps();
+
+            $table->integer('address_id')->unsigned();
+            $table->foreign('address_id')->references('id')->on('addresses');
         });
     }
 

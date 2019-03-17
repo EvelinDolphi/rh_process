@@ -6,10 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Department extends Model
 {
-    protected $fillable = ['name'];
+  protected $fillable = [
+    'nombre',
+  ];
 
-    public function immediate_boss()
+    public function boss()
     {
-        return $this->hasOne('App\Immediate_boss');
+      return $this->hasOne('App\Boss');
     }
+
+    public function places()
+{
+    return $this->hasMany('App\Place');
+}
 }

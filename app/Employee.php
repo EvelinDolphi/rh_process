@@ -6,33 +6,39 @@ use Illuminate\Database\Eloquent\Model;
 
 class Employee extends Model
 {
-  public function adress()
+
+  protected $fillable = [
+    'name', 'first_lastname', 'second_lastname', 'fecha_alta', 'antiguedad',
+    'sexo', 'birthdate', 'numero_seguro', 'curp', 'rfc',
+  ];
+
+  public function address()
   {
-      return $this->hasOne('App\Adress');
+      return $this->belongsTo('App\Address');
   }
 
   public function status()
   {
-      return $this->hasOne('App\Status');
+    return $this->hasOne('App\Status');
   }
 
-  public function hiring()
+  public function hire()
   {
-      return $this->hasOne('App\Hiring');
+    return $this->hasOne('App\Hire');
   }
 
-  public function emergency_contact()
+  public function emergency()
   {
-      return $this->hasOne('App\Emergency_Contact');
+    return $this->hasOne('App\Emergency');
   }
 
-  public function civil_status()
+  public function civil()
   {
-      return $this->hasOne('App\Civil_Status');
+    return $this->hasOne('App\Civil');
   }
 
-  public function role_assignment()
+  public function bank()
   {
-      return $this->hasOne('App\Role_Assigment');
+    return $this->hasOne('App\Bank');
   }
 }
