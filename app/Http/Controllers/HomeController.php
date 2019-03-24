@@ -23,6 +23,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('presentacion');
+    }
+
+    public function listaEmpleados()
+    {
+        return View::make('HomeController.listaEmpleados');
+    }
+
+    public function datospersonales()
+    {
+        return view('datos.create');
     }
 }

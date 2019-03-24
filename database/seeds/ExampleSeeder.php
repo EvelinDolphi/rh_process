@@ -149,7 +149,7 @@ class ExampleSeeder extends Seeder
       //Creando un usuario del sistema y asignandole el rol de ADM
       $user = new User();
       $user->name = 'Estefany';
-      $user->email = 'fany@mail.com';
+      $user->email = 'stellezalarcon@puratos.com';
       $user->password = bcrypt('secret');
       $user->save();
       $user->roles()->attach($administrador);
