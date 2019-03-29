@@ -28,7 +28,7 @@ class CreateEmployeesTable extends Migration
             $table->string('rfc', 35)->nullable($value = true);
             $table->timestamps();
 
-            $table->integer('address_id')->unsigned();
+            $table->integer('address_id')->unsigned()->nullable($value = true);
             $table->foreign('address_id')->references('id')->on('addresses');
         });
     }

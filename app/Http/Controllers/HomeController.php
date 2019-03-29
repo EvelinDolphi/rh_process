@@ -25,14 +25,32 @@ class HomeController extends Controller
     {
         return view('presentacion');
     }
-
-    public function listaEmpleados()
+    public function datosempresa()
     {
-        return View::make('HomeController.listaEmpleados');
+        return view('datosempresa');
     }
-
     public function datospersonales()
     {
-        return view('datos.create');
+        return view('datospersonales');
+    }
+    public function ingresarvigencias()
+    {
+        return view('ingresarvigencias');
+    }
+    public function listavigencias()
+    {
+        return view('listavigencias');
+    }
+    public function registro()
+    {
+        return view('registro');
+    }
+    public function ayuda()
+    {
+        return view('ayuda');
+    }
+    public function listaempleados()
+    {
+        return view('listaempleados');
     }
 }

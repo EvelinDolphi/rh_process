@@ -25,6 +25,7 @@ class CreateClientsTable extends Migration
             $table->string('numero_seguro', 15);
             $table->string('puesto', 35);
             $table->string('departamento', 35);
+            $table->string('rfc', 35);
             $table->timestamps();
         });
     }

@@ -43,6 +43,7 @@ class ExampleSeeder extends Seeder
 
       //Creación de un empleado
       $employee = new Employee();
+      $employee->numero_empleado='12';
       $employee->name='Emeris';
       $employee->first_lastname= 'Hernandez';
       $employee->second_lastname= 'Ortiz';
@@ -153,6 +154,14 @@ class ExampleSeeder extends Seeder
       $user->password = bcrypt('secret');
       $user->save();
       $user->roles()->attach($administrador);
+
+      $user = new User();
+      $user->name = 'Evelin';
+      $user->email = 'evelincastro@gmail.com';
+      $user->password = bcrypt('secret');
+      $user->save();
+      $user->roles()->attach($administrador);
+
 
     }
 }
