@@ -315,7 +315,7 @@ function llenar() {
   $("#ContactAvenue").val('Rancho Viejo');
   $("#ContactLote").val('18');
   $("#ContactManzana").val('3');
-  $("#ContactNumber").val('7713869976');
+  $("#ContactNumber").val('77');
   $("#ContactStreet").val('Ixmiquilpan');
   $("#ContactColonia").val('Los Tulipanes');
   $("#ContactMunicipality").val('Tizayuca');

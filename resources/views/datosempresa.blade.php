@@ -6,7 +6,7 @@
 
   <h4 style="color:orange;">DATOS EMPRESA</h4>
   <br>
-  <form  method="post" action="{{ route('datosempresa') }}" class="needs-validation" novalidate>
+  <form  method="post" action="{{ route('datosempresa', ['employeeId' => $employee->id]) }}" class="needs-validation" novalidate>
     @csrf
   <form class="needs-validation" novalidate>
     <div class="form-row">
@@ -65,7 +65,7 @@
         </div>
       </div>
       <div class="col-md-12 mb-3">
-      {{-- <p>Status:
+      <p>Status:
         <br>
         <br>
         <input name="Status" type="radio" value="a"> Alta
@@ -76,7 +76,7 @@
           Elige un status.
         </div>
         </div>
-      </p> --}}
+      </p>
     </div>
     <h4 style="color:orange;">DATOS DE BANCO</h4>
     <br>
