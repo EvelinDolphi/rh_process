@@ -5,6 +5,8 @@
 @section('contenido')
 
   <h4 style="color:orange;">Datos Personales</h4>
+
+<button type="button" name="button" onclick="llenar();">Llenar datos</button>
   <br>
   <form  method="post" action="{{ route('datospersonales') }}" class="needs-validation" novalidate>
     @csrf
@@ -296,6 +298,42 @@
     <br>
     <br>
   </form>
+
+  <script type="text/javascript">
+function llenar() {
+  $("#EmployeeNumber").val('701');
+  $("#EmployeeName").val('Jose');
+  $("#EmployeeSurnameF").val('Hernandez');
+  $("#EmployeeSurnameS").val('Ortiz');
+  $("#SocialNumber").val('122890');
+  $("#Curp").val('1228902SSA');
+  $("#RFC").val('1228902S');
+  $("#Date").val('31/03/2019');
+  $("#Antiguedad").val('31/03/2019');
+  $("#Birthdate").val('31/03/2019');
+  $("#NHijos").val('2');
+  $("#ContactAvenue").val('Rancho Viejo');
+  $("#ContactLote").val('18');
+  $("#ContactManzana").val('3');
+  $("#ContactNumber").val('7713869976');
+  $("#ContactStreet").val('Ixmiquilpan');
+  $("#ContactColonia").val('Los Tulipanes');
+  $("#ContactMunicipality").val('Tizayuca');
+  $("#ContactState").val('Hidalgo');
+  $("#ContactCodigoP").val('55789');
+  $("#EmergencyName").val('Marianel Castro');
+  $("#EmergencyPhone").val('557898092');
+  $("#AvenueContact").val('Guerrero');
+  $("#LoteContact").val('4');
+  $("#ManzanaContact").val('2');
+  $("#NumberContact").val('34');
+  $("#StreetContact").val('Revolucion');
+  $("#ColoniaContact").val('Marina');
+  $("#MunicipalityContact").val('Tecamac');
+  $("#StateContact").val('Mex');
+  $("#CodigoPContact").val('77895');
+}
+</script>
 
   <script>
   // Example starter JavaScript for disabling form submissions if there are invalid fields
