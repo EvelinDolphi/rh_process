@@ -11,14 +11,14 @@
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="validationCustom01">Numero Empleado</label>
-        <input name="EmployeeNumber" type="text" class="form-control" id="validationCustom01" placeholder="Nombre" value="" required>
+        <input name="EmployeeNumber" type="text" class="form-control" id="EmployeeNumber" placeholder="Nombre" value="" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationCustom01">Nombre</label>
-        <input name="EmployeeName" type="text" class="form-control" id="validationCustom01" placeholder="Nombre" value="" required>
+        <input name="EmployeeName" type="text" class="form-control" id="EmployeeName" placeholder="Nombre" value="" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
@@ -27,7 +27,7 @@
       <br>
       <div class="col-md-3 mb-3">
         <label for="validationCustom02">Apellido Paterno</label>
-        <input name="EmployeeSurnameF" type="text" class="form-control" id="validationCustom02" placeholder="Apellido Paterno" value="" required>
+        <input name="EmployeeSurnameF" type="text" class="form-control" id="EmployeeSurnameF" placeholder="Apellido Paterno" value="" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
@@ -35,7 +35,7 @@
       <br>
       <div class="col-md-3 mb-3">
         <label for="validationCustom02">Apellido Materno</label>
-        <input name="EmployeeSurnameS" type="text" class="form-control" id="validationCustom02" placeholder="Apellido Materno" value="" required>
+        <input name="EmployeeSurnameS" type="text" class="form-control" id="EmployeeSurnameS" placeholder="Apellido Materno" value="" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
@@ -44,21 +44,21 @@
       <br>
       <div class="col-md-4 mb-3">
         <label for="validationCustom05">Numero de Seguro</label>
-        <input name="SocialNumber" type="text" class="form-control" id="validationCustom05" placeholder="Numero_Seguro" required>
+        <input name="SocialNumber" type="text" class="form-control" id="SocialNumber" placeholder="Numero_Seguro" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationCustom05">Curp</label>
-        <input name="Curp" type="text" class="form-control" id="validationCustom05" placeholder="Curp" required>
+        <input name="Curp" type="text" class="form-control" id="Curp" placeholder="Curp" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationCustom05">RFC</label>
-        <input name="RFC" type="text" class="form-control" id="validationCustom05" placeholder="RFC" required>
+        <input name="RFC" type="text" class="form-control" id="RFC" placeholder="RFC" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
@@ -67,7 +67,7 @@
       <div class="col-md-6 mb-3">
         <label for="validationCustomUsername">Fecha de Alta</label>
         <br>
-        <input type="date" name="Date" step="1" min="1940-01-01" max="2001-12-31" id="validationCustom02" value="">
+        <input type="date" name="Date" id="Date" step="1" min="1940-01-01" max="2001-12-31" id="Date" value="">
         <div class="valid-feedback">
         Bien echo!
         <br>
@@ -82,7 +82,7 @@
       <div class="col-md-4 mb-3">
         <label for="validationCustom03">Antiguedad</label>
         <br>
-        <input type="date" name="Antiguedad" step="1" min="1940-01-01" max="2001-12-31" value="">
+        <input type="date" name="Antiguedad" id="Antiguedad" step="1" min="1940-01-01" max="2001-12-31" value="">
         {{-- <input type="text" class="form-control" id="validationCustom03" placeholder="Antiguedad" required> --}}
         <div class="valid-feedback">
         Bien echo!
@@ -91,7 +91,7 @@
       <div class="col-md-4 mb-3">
         <label for="validationCustom03">Fecha de cumpleaños:</label>
         <br>
-        <input type="date" name="Birthdate" step="1" min="1940-01-01" max="2001-12-31" value="">
+        <input type="date" name="Birthdate" id="Birthdate" step="1" min="1940-01-01" max="2001-12-31" value="">
         {{-- <input type="text" class="form-control" id="validationCustom03" placeholder="Fecha" required> --}}
         <div class="invalid-feedback">
           Elige una fecha de cumpleaños.
@@ -119,7 +119,7 @@
       </p>
       <div class="col-md-4 mb-3">
         <label for="validationCustom05">Numero de hijos:</label>
-        <input name="NHijos" type="text" class="form-control" id="validationCustom05" placeholder="Numero_Hijos" required>
+        <input name="NHijos" type="text" class="form-control" id="NHijos" placeholder="Numero_Hijos" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
@@ -133,7 +133,7 @@
       <div class="form-row">
         <div class="col-md-4 mb-3">
           <label for="validationCustom01">Avenida</label>
-          <input name="ContactAvenue"type="text" class="form-control" id="validationCustom01" placeholder="Avenida" value="" required>
+          <input name="ContactAvenue"type="text" class="form-control" id="ContactAvenue" placeholder="Avenida" value="" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
@@ -142,7 +142,7 @@
         <br>
         <div class="col-md-3 mb-3">
           <label for="validationCustom02">Lote</label>
-          <input name="ContactLote" type="text" class="form-control" id="validationCustom02" placeholder="Lote" value="" required>
+          <input name="ContactLote" type="text" class="form-control" id="ContactLote" placeholder="Lote" value="" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
@@ -150,7 +150,7 @@
         <br>
         <div class="col-md-3 mb-3">
           <label for="validationCustom02">Manzana</label>
-          <input name="ContactManzana" type="text" class="form-control" id="validationCustom02" placeholder="Manzana" value="" required>
+          <input name="ContactManzana" type="text" class="form-control" id="ContactManzana" placeholder="Manzana" value="" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
@@ -159,42 +159,42 @@
         <br>
         <div class="col-md-4 mb-3">
           <label for="validationCustom05">Numero</label>
-          <input name="ContactNumber" type="text" class="form-control" id="validationCustom05" placeholder="Numero" required>
+          <input name="ContactNumber" type="text" class="form-control" id="ContactNumber" placeholder="Numero" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationCustom05">Calle</label>
-          <input name="ContactStreet" type="text" class="form-control" id="validationCustom05" placeholder="Calle" required>
+          <input name="ContactStreet" type="text" class="form-control" id="ContactStreet" placeholder="Calle" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationCustom05">Colonia</label>
-          <input name="ContactColonia" type="text" class="form-control" id="validationCustom05" placeholder="Colonia" required>
+          <input name="ContactColonia" type="text" class="form-control" id="ContactColonia" placeholder="Colonia" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationCustom05">Municipio</label>
-          <input name="ContactMunicipality" type="text" class="form-control" id="validationCustom05" placeholder="Municipio" required>
+          <input name="ContactMunicipality" type="text" class="form-control" id="ContactMunicipality" placeholder="Municipio" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationCustom05">Estado</label>
-          <input name="ContactState" type="text" class="form-control" id="validationCustom05" placeholder="Estado" required>
+          <input name="ContactState" type="text" class="form-control" id="ContactState" placeholder="Estado" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationCustom05">Codigo Postal</label>
-          <input name="ContactCodigoP" type="text" class="form-control" id="validationCustom05" placeholder="Codigo Postal" required>
+          <input name="ContactCodigoP" type="text" class="form-control" id="ContactCodigoP" placeholder="Codigo Postal" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
@@ -205,14 +205,14 @@
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="validationCustom01">Nombre</label>
-        <input name="EmergencyName" type="text" class="form-control" id="validationCustom01" placeholder="Nombre" value="" required>
+        <input name="EmergencyName" type="text" class="form-control" id="EmergencyName" placeholder="Nombre" value="" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationCustom02">Telefono</label>
-        <input name="EmergencyPhone"type="text" class="form-control" id="validationCustom02" placeholder="Telefono" value="" required>
+        <input name="EmergencyPhone"type="text" class="form-control" id="EmergencyPhone" placeholder="Telefono" value="" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
@@ -220,7 +220,7 @@
       <div class="form-row">
         <div class="col-md-4 mb-3">
           <label for="validationCustom01">Avenida</label>
-          <input name="AvenueContact"type="text" class="form-control" id="validationCustom01" placeholder="Avenida" value="" required>
+          <input name="AvenueContact"type="text" class="form-control" id="AvenueContact" placeholder="Avenida" value="" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
@@ -229,7 +229,7 @@
         <br>
         <div class="col-md-3 mb-3">
           <label for="validationCustom02">Lote</label>
-          <input name="LoteContact" type="text" class="form-control" id="validationCustom02" placeholder="Lote" value="" required>
+          <input name="LoteContact" type="text" class="form-control" id="LoteContact" placeholder="Lote" value="" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
@@ -237,7 +237,7 @@
         <br>
         <div class="col-md-3 mb-3">
           <label for="validationCustom02">Manzana</label>
-          <input name="ManzanaContact" type="text" class="form-control" id="validationCustom02" placeholder="Manzana" value="" required>
+          <input name="ManzanaContact" type="text" class="form-control" id="ManzanaContact" placeholder="Manzana" value="" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
@@ -246,42 +246,42 @@
         <br>
         <div class="col-md-4 mb-3">
           <label for="validationCustom05">Numero</label>
-          <input name="NumberContact" type="text" class="form-control" id="validationCustom05" placeholder="Numero" required>
+          <input name="NumberContact" type="text" class="form-control" id="NumberContact" placeholder="Numero" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationCustom05">Calle</label>
-          <input name="StreetContact" type="text" class="form-control" id="validationCustom05" placeholder="Calle" required>
+          <input name="StreetContact" type="text" class="form-control" id="StreetContact" placeholder="Calle" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationCustom05">Colonia</label>
-          <input name="ColoniaContact" type="text" class="form-control" id="validationCustom05" placeholder="Colonia" required>
+          <input name="ColoniaContact" type="text" class="form-control" id="ColoniaContact" placeholder="Colonia" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationCustom05">Municipio</label>
-          <input name="MunicipalityContact" type="text" class="form-control" id="validationCustom05" placeholder="Municipio" required>
+          <input name="MunicipalityContact" type="text" class="form-control" id="MunicipalityContact" placeholder="Municipio" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationCustom05">Estado</label>
-          <input name="StateContact" type="text" class="form-control" id="validationCustom05" placeholder="Estado" required>
+          <input name="StateContact" type="text" class="form-control" id="StateContact" placeholder="Estado" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationCustom05">Codigo Postal</label>
-          <input name="CodigoPContact" type="text" class="form-control" id="validationCustom05" placeholder="Codigo Postal" required>
+          <input name="CodigoPContact" type="text" class="form-control" id="CodigoPContact" placeholder="Codigo Postal" required>
           <div class="valid-feedback">
             Bien echo!
           </div>
