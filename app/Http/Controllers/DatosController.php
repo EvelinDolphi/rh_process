@@ -176,8 +176,7 @@ class DatosController extends Controller
 
       $civil_status->save();
 
-
-      return redirect()->route('datosempresa');
+      return view('datosempresa')->with('employee', $employee);
 
         // dd($request->all());
     }
