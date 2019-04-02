@@ -12,6 +12,7 @@ use App\Status;
 use App\Place;
 use App\Bank;
 use App\Employee;
+use App\Hire;
 
 class EmpresaController extends Controller
 {
@@ -22,7 +23,12 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        //
+      // $employees = Employee::where('numero_empleado', Employee::get('search').'%')
+      //         ->orWhere('name', Input::get('search').'%');
+      //         ->orderBy('id', 'desc');
+      
+        $employees = Employee::all();
+        return view('listaempleados')->with('employees', $employees);
     }
 
     /**
@@ -35,7 +41,7 @@ class EmpresaController extends Controller
       $boss = new Boss();
       $boss->nombre = $data['JefeIm'];
 
-      $boss->save();
+      return $boss;
     }
 
     public function createDepartment(array $data)
@@ -43,7 +49,7 @@ class EmpresaController extends Controller
       $department = new Department();
       $department->nombre = $data['Departa'];
 
-      $department->save();
+      return $department;
     }
 
     public function createPlace(array $data)
@@ -52,7 +58,7 @@ class EmpresaController extends Controller
       $place->area = $data['Area'];
       $place->delegacion = $data['Delega'];
 
-      $place->save();
+      return $place;
     }
 
     public function createSalary(array $data)
@@ -62,7 +68,7 @@ class EmpresaController extends Controller
       $salary->salario_cotizacion = $data['SalarioC'];
       $salary->sueldo_contratacion = $data['SalarioCo'];
 
-      $salary->save();
+      return $salary;
     }
 
     public function createStatus(array $data)
@@ -84,8 +90,18 @@ class EmpresaController extends Controller
       $bank = new Bank();
       $bank->clabe_interbancaria = $data['NumeroC'];
       $bank->numero_cuenta = $data['ClabeIn'];
+      $bank->employee_id = $data['employeeId'];
 
-      $place->save();
+      return $bank;
+    }
+
+    public function createHire(array $data)
+    {
+      $hire = new Hire();
+      $hire->description = $data['descripcion'];
+      $hire->employee_id = $data['employeeId'];
+
+      return $hire;
     }
     /**
      * Store a newly created resource in storage.
@@ -105,6 +121,7 @@ class EmpresaController extends Controller
          'SalarioCo' => 'required',
          'NumeroC' => 'required',
          'ClabeIn' => 'required',
+         'descripcion' => 'required',
 
          ]);
        }
@@ -118,17 +135,27 @@ class EmpresaController extends Controller
 
       if($employee =Employee::findOrFail($request->employeeId)){
         $status = $this->createStatus($request->all());
-        // $status->employee()->associate($employee);
         $status->save();
-        return redirect('listaempleados');
+        $bank = $this->createBank($request->all());
+        $bank->save();
+        $hire = $this->createHire($request->all());
+        $hire->save();
+        $salary = $this->createSalary($request->all());
+        $salary->hire()->associate($hire);
+        $salary->save();
+        $department = $this->createDepartment($request->all());
+        $department->save();
+        $boss = $this->createBoss($request->all());
+        $boss->department()->associate($department);
+        $boss->save();
+        $place = $this->createPlace($request->all());
+        $place->hire()->associate($hire);
+        $place->department()->associate($boss);
+        $place->save();
+        return redirect()->route('listaempleados');
       }else{
         abort(404);
-
       }
-
-
-
-
       // dd($employee);
 
 
