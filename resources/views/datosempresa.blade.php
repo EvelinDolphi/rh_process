@@ -6,13 +6,15 @@
 
   <h4 style="color:orange;">DATOS EMPRESA</h4>
   <br>
+  <button type="button" name="button" onclick="llenar();">Llenar datos</button>
+    <br>
   <form  method="post" action="{{ route('datosempresa', ['employeeId' => $employee->id]) }}" class="needs-validation" novalidate>
     @csrf
   <form class="needs-validation" novalidate>
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="validationCustom01">Jefe Inmediato</label>
-        <input name="JefeIm" type="text" class="form-control" id="validationCustom01" placeholder="Jefe Inmediato" value="" required>
+        <input name="JefeIm" type="text" class="form-control" id="JefeIm" placeholder="Jefe Inmediato" value="" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
@@ -21,21 +23,28 @@
       <br>
       <div class="col-md-3 mb-3">
         <label for="validationCustom02">Departamento</label>
-        <input name="Departa" type="text" class="form-control" id="validationCustom02" placeholder="Departamento" value="" required>
+        <input name="Departa" type="text" class="form-control" id="Departa" placeholder="Departamento" value="" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
       </div>
       <div class="col-md-3 mb-3">
         <label for="validationCustom02">Área</label>
-        <input name="Area" type="text" class="form-control" id="validationCustom02" placeholder="Area" value="" required>
+        <input name="Area" type="text" class="form-control" id="Area" placeholder="Area" value="" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
       </div>
       <div class="col-md-3 mb-3">
         <label for="validationCustom02">Delegación</label>
-        <input name="Delega" type="text" class="form-control" id="validationCustom02" placeholder="Delegacion" value="" required>
+        <input name="Delega" type="text" class="form-control" id="Delega" placeholder="Delegacion" value="" required>
+        <div class="valid-feedback">
+          Bien echo!
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom02">Descripción</label>
+        <input name="descripcion" type="text" class="form-control" id="descripcion" placeholder="Descripción" value="" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
@@ -43,7 +52,7 @@
       <br>
       <div class="col-md-3 mb-3">
         <label for="validationCustom02">Salario Base</label>
-        <input name="SalarioB" type="text" class="form-control" id="validationCustom02" placeholder="$" value="" required>
+        <input name="SalarioB" type="text" class="form-control" id="SalarioB" placeholder="$" value="" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
@@ -52,14 +61,14 @@
       <br>
       <div class="col-md-4 mb-3">
         <label for="validationCustom05">Salario Contratación</label>
-        <input name="SalarioC" type="text" class="form-control" id="validationCustom05" placeholder="$" required>
+        <input name="SalarioC" type="text" class="form-control" id="SalarioC" placeholder="$" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationCustom05">Salario Cotización</label>
-        <input name="SalarioCo" type="text" class="form-control" id="validationCustom05" placeholder="$" required>
+        <input name="SalarioCo" type="text" class="form-control" id="SalarioCo" placeholder="$" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
@@ -82,23 +91,39 @@
     <br>
     <div class="col-md-4 mb-3">
       <label for="validationCustom05">Numero de Cuenta</label>
-      <input name="NumeroC" type="text" class="form-control" id="validationCustom05" placeholder="Numero de cuenta" required>
+      <input name="NumeroC" type="text" class="form-control" id="NumeroC" placeholder="Numero de cuenta" required>
       <div class="valid-feedback">
         Bien echo!
       </div>
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationCustom05">Clabe Interbancaria</label>
-      <input name="ClabeIn" type="text" class="form-control" id="validationCustom05" placeholder="Clabe Interbancaria" required>
+      <input name="ClabeIn" type="text" class="form-control" id="ClabeIn" placeholder="Clabe Interbancaria" required>
       <div class="valid-feedback">
         Bien echo!
       </div>
     </div>
     <br>
-    <button class="btn btn-primary" type="submit">Siguiente</button>
+    <button class="btn btn-primary" type="submit">Guardar</button>
   </form>
   <br>
   <br>
+
+  <script type="text/javascript">
+function llenar() {
+  $("#JefeIm").val('Francisco Beltran');
+  $("#Departa").val('Sistemas');
+  $("#Area").val('Diseño');
+  $("#Delega").val('Tizayuca');
+  $("#descripcion").val('Encargado');
+  $("#SalarioB").val('2700');
+  $("#SalarioC").val('2700');
+  $("#SalarioCo").val('3000');
+  $("#NumeroC").val('10253399444');
+  $("#ClabeIn").val('1000010253399444');
+}
+</script>
+
   <script>
   // Example starter JavaScript for disabling form submissions if there are invalid fields
   (function() {

@@ -5,6 +5,8 @@
 @section('contenido')
   <h4 style="color:orange;">Ingresa una Vigencia</h4>
   <br>
+  <form  method="post" action="{{ route('ingresarvigencias')}}" class="needs-validation" novalidate>
+    @csrf
   <form class="needs-validation" novalidate>
     <div class="form-row">
       <div class="col-md-4 mb-3">

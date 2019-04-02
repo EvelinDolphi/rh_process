@@ -16,7 +16,8 @@ class VigenciasController extends Controller
      */
     public function index()
     {
-        //
+      $vigencias = Client::all();
+      return view('listavigencias')->with('vigencias', $vigencias);
     }
 
     /**

@@ -31,17 +31,22 @@ Route::post('datospersonales', 'DatosController@store');
 Route::get('ingresarvigencias', 'HomeController@ingresarvigencias')
           ->name('ingresarvigencias');
 
-Route::get('listaempleados', 'HomeController@listaempleados')
-          ->name('listaempleados');          
+Route::post('ingresarvigencias', 'VigenciasController@store');
+
+Route::get('listaempleados', 'EmpresaController@index')
+          ->name('listaempleados');
 
 Route::get('ayuda', 'HomeController@ayuda')
           ->name('ayuda');
 
-Route::get('listavigencias', 'HomeController@listavigencias')
+Route::get('listavigencias', 'VigenciasController@index')
           ->name('listavigencias');
 
 Route::get('registro', 'HomeController@registro')
           ->name('registro');
+
+Route::get('empleados', 'EmpresaController@index')
+          ->name('/empleados');          
 
 // rutas de pruebas
 

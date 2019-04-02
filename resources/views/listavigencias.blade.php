@@ -3,24 +3,37 @@
 @section('Titulo', 'Vigencias')
 
 @section('contenido')
+  <div class="container-fluid">
+    <h1 class="h3 mb-2 text-gray-900">Lista de Vigencias</h1>
+    <p class="mb-4">Aqui en esta secion podras imprimir el formato que tu desees sobre vigencias</p>
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Datos</h6>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          </div>
+        </div>
+        </div>
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Empresa</th>
+            <th scope="col"># Social</th>
+            <th scope="col">RFC</th>
+          </tr>
+        </thead>
+@foreach ($vigencias as $client)
   <br>
-  <h2 style="color:red;">LISTA DE VIGENCIAS</h2>
-  <br>
-  <br>
-    <ul class="list-group">
-      <li class="list-group-item-danger">Lista vigencias</li>
-
-      <li class="list-group-item list-group-item-primary">A simple warning list group item</li>
-      <li class="list-group-item list-group-item-primary">A simple info list group item</li>
-      <li class="list-group-item list-group-item-primary">A simple light list group item</li>
-      <li class="list-group-item list-group-item-primary">A simple dark list group item</li>
-      <li class="list-group-item list-group-item-primary">A simple primary list group item</li>
-      <li class="list-group-item list-group-item-primary">A simple secondary list group item</li>
-      <li class="list-group-item list-group-item-primary">A simple success list group item</li>
-      <li class="list-group-item list-group-item-primary">A simple danger list group item</li>
-      <li class="list-group-item list-group-item-primary">A simple warning list group item</li>
-      <li class="list-group-item list-group-item-primary">A simple info list group item</li>
-      <li class="list-group-item list-group-item-primary">A simple light list group item</li>
-      <li class="list-group-item list-group-item-primary">A simple dark list group item</li>
-    </ul>
+    <tbody>
+      <div class="form">
+          <td scope="row">{{ $client->name}}</th>
+          <td>{{ $client->numero_seguro}}</td>
+          <td>{{ $client->rfc}}</td>
+      </div>
+      </tbody>
+    </div>
+</table>
+@endforeach
   @endsection
