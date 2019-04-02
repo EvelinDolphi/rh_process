@@ -64,7 +64,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Opciones:</h6>
             <a class="collapse-item" href="{{ route('datospersonales') }}">Ingresar Empleado</a>
-            <a class="collapse-item" href="{{ route('listaempleados') }}">Lista Empleados</a>
+            <a class="collapse-item" href="{{ route('listaempleados','todos') }}">Lista Empleados</a>
           </div>
         </div>
       </li>
@@ -127,7 +127,7 @@
           </button>
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="{{ route('/empleados') }}" method="get">
+          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="{{ route('listaempleados', 'selected')}}" method="get">
             @csrf
             <div class="input-group">
               <input name="busqueda" type="text" class="form-control bg-light border-0 small" placeholder="Busqueda..." aria-label="Search" aria-describedby="basic-addon2">

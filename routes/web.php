@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('presentacion');
 })->middleware('auth');
 
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('datosempresa', 'HomeController@datosempresa')
@@ -33,7 +32,7 @@ Route::get('ingresarvigencias', 'HomeController@ingresarvigencias')
 
 Route::post('ingresarvigencias', 'VigenciasController@store');
 
-Route::get('listaempleados', 'EmpresaController@index')
+Route::get('listaempleados/{type}', 'EmpresaController@index')
           ->name('listaempleados');
 
 Route::get('ayuda', 'HomeController@ayuda')
@@ -45,10 +44,9 @@ Route::get('listavigencias', 'VigenciasController@index')
 Route::get('registro', 'HomeController@registro')
           ->name('registro');
 
-Route::get('empleados', 'EmpresaController@index')
-          ->name('/empleados');          
-
 // rutas de pruebas
+
+
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');

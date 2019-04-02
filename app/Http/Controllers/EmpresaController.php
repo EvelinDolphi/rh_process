@@ -21,14 +21,21 @@ class EmpresaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($type, Request $request)
     {
-      $employees = Employee::where('numero_empleado', Employee::get('search').'%')
-              ->orWhere('name', Input::get('search').'%');
-              ->orderBy('id', 'desc');
+      $query = $request->busqueda;
+        if ($type == 'selected') {
+          $employees =Employee::where('numero_empleado', $query)
+          ->orWhere('name','like',$query.'%')
+          ->orWhere('first_lastname','like', $query.'%')
+          ->orWhere('second_lastname','like', $query.'%')
+          ->orderBy('numero_empleado', 'desc')->get();
+        }else{
+          $employees = Employee::all();
+        }
 
-        $employees = Employee::all();
-        return view('listaempleados')->with('employees', $employees);
+      return view('listaempleados')->with('employees', $employees);
+
     }
 
     /**
