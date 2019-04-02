@@ -23,10 +23,10 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-      // $employees = Employee::where('numero_empleado', Employee::get('search').'%')
-      //         ->orWhere('name', Input::get('search').'%');
-      //         ->orderBy('id', 'desc');
-      
+      $employees = Employee::where('numero_empleado', Employee::get('search').'%')
+              ->orWhere('name', Input::get('search').'%');
+              ->orderBy('id', 'desc');
+
         $employees = Employee::all();
         return view('listaempleados')->with('employees', $employees);
     }
