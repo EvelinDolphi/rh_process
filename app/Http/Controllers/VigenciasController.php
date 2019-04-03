@@ -16,6 +16,17 @@ class VigenciasController extends Controller
      */
     public function index()
     {
+
+      $query = $request->busqueda;
+        if ($type == 'choose') {
+          $vigencias =Client::where('name', $query)
+          ->orWhere('numero_seguro','like',$query.'%')
+          ->orWhere('rfc','like', $query.'%')
+          ->orderBy('name', 'desc')->get();
+        }else{
+          $vigencias = Client::all();
+        }
+
       $vigencias = Client::all();
       return view('listavigencias')->with('vigencias', $vigencias);
     }

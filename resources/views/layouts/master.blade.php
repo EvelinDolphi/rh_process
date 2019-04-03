@@ -128,6 +128,7 @@
 
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="{{ route('listaempleados', 'selected')}}" method="get">
+            <form  action="{{ route('listavigencias', 'choose') }}" method="get">
             @csrf
             <div class="input-group">
               <input name="busqueda" type="text" class="form-control bg-light border-0 small" placeholder="Busqueda..." aria-label="Search" aria-describedby="basic-addon2">
@@ -138,6 +139,7 @@
                   </button>
                   </div>
                 </div>
+                </form>
             </form>
 
 
