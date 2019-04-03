@@ -27,18 +27,20 @@
             <th scope="col">Apellido Materno</th>
           </tr>
         </thead>
-@foreach ($employees as $employee)
-  <br>
-    <tbody>
-      <div class="form">
-          <td scope="row">{{ $employee->numero_empleado}}</th>
+        <br>
+          <tbody>
+            {{-- <div class="form"> --}}
+        @foreach ($employees as $employee)
+        <tr>
+          <th scope="row">{{ $employee->numero_empleado}}</th>
           <td>{{ $employee->name}}</td>
           <td>{{ $employee->first_lastname}}</td>
           <td>{{ $employee->second_lastname}}</td>
-      </div>
-      </tbody>
-    </div>
-</table>
-@endforeach
+        </tr>
+        @endforeach
+            {{-- </div> --}}
+        </tbody>
+        {{-- </div> --}}
+        </table>
 
   @endsection

@@ -31,7 +31,7 @@
 
       <!-- Sidebar - Brand -->
       <a class="navbar-brand" href="{{ route('home') }}">
-          <img src="img/logo_reprocess.png" width="180" alt="">
+          <img src="{{asset('img/logo_reprocess.png')}}" width="180" alt="">
         </a>
         <br>
         <br>
@@ -172,7 +172,8 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"> {{ Auth::user()->name }}</span>
-                <img class="img-profile rounded-circle">
+                {{-- <img class="{{asset('img-profile rounded-circle')}}"> --}}
+                <i class="fas fa-fw fa-user-circle" style="color: #4e73df; font-size: 2rem;"></i>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
