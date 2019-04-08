@@ -18,37 +18,48 @@
                 <div class="text-center">
                   <h1 class="h4 text-gray-900 mb-4">Crea una cuenta!</h1>
                 </div>
-                <form class="user">
+                <form class="user" action="{{ route('register') }}" method="POST" >
+                  @csrf
                   <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nombre">
-                    </div>
-                    <div class="col-sm-6">
-                      <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Apellido">
+                      <input  type="text" class="form-control form-control-user {{$errors->has('name') ? 'is-invalid' : '' }}" id="name" placeholder="Nombre" name="name" value="{{ old('name') }}" requiared autofocus>
+
+                      @if ($errors->has('name'))
+                        <span class="invalid-feedback" role="alert">
+                          {{ $errors->first('name') }}
+                        </span>
+                      @endif
                     </div>
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
+                    <input type="email" class="form-control form-control-user {{$errors->has('email') ? 'is-invalid' : '' }}" id="email" placeholder="Email" name="email" value="{{ old('email') }}" required>
+
+                    @if ($errors->has('email'))
+                      <span class="invalid-feedback" role="alert">
+                        {{ $errors->first('email') }}
+                      </span>
+                    @endif
                   </div>
                   <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Contraseña">
+                      <input type="password" class="form-control form-control-user {{$errors->has('password') ? 'is-invalid' : '' }}" id="password" name="password" placeholder="password" required>
+
+                      @if ($errors->has('password'))
+                        <span class="invalid-feedback" role="alert">
+                          {{ $errors->first('password') }}
+                        </span>
+                      @endif
+
                     </div>
                     <div class="col-sm-6">
-                      <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repetir contraseña">
+                      <input type="password" class="form-control form-control-user" id="password-confirm" name="password_confirmation" placeholder="Repetir contraseña" required>
                     </div>
                   </div>
-                  <a href="login.html" class="btn btn-primary btn-user btn-block">
+                  <button type="submit" class="btn btn-primary btn-user btn-block">
                     Registrar Cuenta
-                  </a>
+                  </button>
                 </form>
                 <hr>
-                <div class="text-center">
-                  <a class="small" href="forgot-password.html">Olvidaste tu contraseña?</a>
-                </div>
-                <div class="text-center">
-                  <a class="small" href="login.html">Ya tienes una cuenta? Inicia sesión!</a>
-                </div>
               </div>
             </div>
           </div>
@@ -57,17 +68,6 @@
 
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
   </body>
 
-  </html>
   @endsection

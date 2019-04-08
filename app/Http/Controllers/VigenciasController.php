@@ -14,7 +14,7 @@ class VigenciasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($type, Request $request)
     {
 
       $query = $request->busqueda;
@@ -72,7 +72,7 @@ class VigenciasController extends Controller
       $client->save();
 
 
-      return redirect()->route('listavigencias');
+      return redirect()->route('listavigencias', 'todas');
 
         // dd($request->all());
     }

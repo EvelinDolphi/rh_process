@@ -159,7 +159,7 @@ class EmpresaController extends Controller
         $place->hire()->associate($hire);
         $place->department()->associate($boss);
         $place->save();
-        return redirect()->route('listaempleados');
+        return redirect()->route('listaempleados','todos');
       }else{
         abort(404);
       }

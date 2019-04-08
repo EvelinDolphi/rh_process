@@ -78,7 +78,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Opciones:</h6>
             <a class="collapse-item" href="{{ route('ingresarvigencias') }}">Ingresar Vigencia</a>
-            <a class="collapse-item" href="{{ route('listavigencias') }}">Lista Vigencias</a>
+            <a class="collapse-item" href="{{ route('listavigencias', 'todas') }}">Lista Vigencias</a>
           </div>
         </div>
       </li>
@@ -99,7 +99,7 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{ route('registro') }}">Registro</a>
+            <a class="collapse-item" href="{{ route('register') }}">Registro</a>
             <div class="collapse-divider"></div>
           </div>
         </div>

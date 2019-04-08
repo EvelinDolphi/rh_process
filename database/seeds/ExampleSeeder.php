@@ -591,8 +591,15 @@ class ExampleSeeder extends Seeder
       $role->descripcion = 'Todos los permisos de la aplicación';
       $role->save();
 
+      $role = new Role();
+      $role->nombre = 'Usuario';
+      $role->descripcion = 'Todos los permisos de la aplicación';
+      $role->save();
+
+
       //Recuperando el rol No. 1 (Administrador)
-      $administrador = Role::find(1);
+      $administrador = Role::where('nombre','Administrador')->first();
+      $usuario = Role::where('nombre', 'Usuario')->first();
 
       //Creando un usuario del sistema y asignandole el rol de ADM
       $user = new User();
@@ -608,6 +615,13 @@ class ExampleSeeder extends Seeder
       $user->password = bcrypt('secret');
       $user->save();
       $user->roles()->attach($administrador);
+
+      $user = new User();
+      $user->name = 'Emeris';
+      $user->email = 'emeris@gmail.com';
+      $user->password = bcrypt('secret');
+      $user->save();
+      $user->roles()->attach($usuario);
 
 
     }

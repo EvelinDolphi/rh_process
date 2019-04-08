@@ -41,9 +41,9 @@ class HomeController extends Controller
     {
         return view('listavigencias');
     }
-    public function registro()
+    public function register()
     {
-        return view('registro');
+        return view('register');
     }
     public function ayuda()
     {
