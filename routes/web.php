@@ -24,6 +24,9 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 //   });
 
 
+Route::get('documento', 'PDFController@index');
+
+
 Route::middleware([ 'auth','role:Usuario,Administrador'])->group(function (){
   // Rutas para acceso a usuarios y administradores que halla iniciado sesion
 
