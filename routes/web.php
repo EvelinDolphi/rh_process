@@ -23,8 +23,13 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 //       return dd($role);
 //   });
 
+Route::get('documento', function () {
+  $employee= App\Employee::find(1);
+  dd($employee->address);
+});
 
-Route::get('documento', 'PDFController@index');
+Route::get('formato', 'PDFController@index')
+          ->name('formato');
 
 
 Route::middleware([ 'auth','role:Usuario,Administrador'])->group(function (){

@@ -11,9 +11,9 @@
           <div class="col-xl-9 mx-auto">
             <div class="cta-inner text-center rounded">
               <h2 class="section-heading mb-4">
-                <h1 style="color:orange;" class="mt-3 mb-1">Bienvenido a RH Process</h1>
+                <h1 style="color:brown;" class="mt-3 mb-1">Bienvenido a RH Process</h1>
               </h2>
-              <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/777.jpg" alt="">
+              <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="img/9.jpg" alt="">
               <br>
               <br>
               <h4 style="color:black;"> Desarrollo de un software para el llenado automatico de formatos que el area de recursos humanos

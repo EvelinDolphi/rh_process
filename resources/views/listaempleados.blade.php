@@ -25,6 +25,8 @@
             <th scope="col">Nombre</th>
             <th scope="col">Apellido Paterno</th>
             <th scope="col">Apellido Materno</th>
+            <th scope="col">Eliminar</th>
+            <th scope="col">Formatos</th>
           </tr>
         </thead>
         <br>
@@ -36,7 +38,29 @@
           <td>{{ $employee->name}}</td>
           <td>{{ $employee->first_lastname}}</td>
           <td>{{ $employee->second_lastname}}</td>
+          <td>
+            <a href="#" class="btn btn-danger btn-xs">Eliminar</a>
+
+          </td>
+          <td>
+            <div class= " btn btn-primary btn-sm float-right">
+              <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Imprimir
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="{{ route('formato', ['formato'=> 'bancomer', 'employee'=> $employee->id]) }}">CARTA BANCOMER</a>
+              <a class="dropdown-item" href="{{ route('formato', ['formato'=> 'soriana', 'employee'=> $employee->id]) }}">CARTA SORIANA</a>
+              <a class="dropdown-item" href="{{ route('formato', ['formato'=> 'cityfresko', 'employee'=> $employee->id]) }}">CITY FRESCO</a>
+              <a class="dropdown-item" href="{{ route('formato', ['formato'=> 'waltmart', 'employee'=> $employee->id]) }}">CARTA WALTMART</a>
+              <a class="dropdown-item" href="{{ route('formato', ['formato'=> 'cartapatronal', 'employee'=> $employee->id]) }}">CARTA PATRONAL</a>
+              <a class="dropdown-item" href="{{ route('formato', ['formato'=> 'expediente', 'employee'=> $employee->id]) }}">EXPEDIENTE</a>
+            </div>
+            </div>
+
+          </td>
+
         </tr>
+
         @endforeach
             {{-- </div> --}}
         </tbody>

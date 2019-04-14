@@ -40,11 +40,13 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="{{ route('ayuda') }}">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Ayuda</span></a>
-      </li>
+  @auth
+    <li class="nav-item active">
+      <a class="nav-link" href="{{ route('ayuda') }}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Ayuda</span></a>
+    </li>
+
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -53,7 +55,6 @@
       <div class="sidebar-heading">
         Listas
       </div>
-
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -63,7 +64,9 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Opciones:</h6>
-            <a class="collapse-item" href="{{ route('datospersonales') }}">Ingresar Empleado</a>
+            @if (Auth::user()->hasRole('Administrador'))
+              <a class="collapse-item" href="{{ route('datospersonales') }}">Ingresar Empleado</a>
+            @endif
             <a class="collapse-item" href="{{ route('listaempleados','todos') }}">Lista Empleados</a>
           </div>
         </div>
@@ -77,7 +80,9 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Opciones:</h6>
+            @if (Auth::user()->hasRole('Administrador'))
             <a class="collapse-item" href="{{ route('ingresarvigencias') }}">Ingresar Vigencia</a>
+            @endif
             <a class="collapse-item" href="{{ route('listavigencias', 'todas') }}">Lista Vigencias</a>
           </div>
         </div>
@@ -99,7 +104,9 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
+            @if (Auth::user()->hasRole('Administrador'))
             <a class="collapse-item" href="{{ route('register') }}">Registro</a>
+            @endif
             <div class="collapse-divider"></div>
           </div>
         </div>
@@ -231,6 +238,7 @@
       </div>
     </div>
   </div>
+  @endauth
 
   <!-- Bootstrap core JavaScript-->
   <script type="text/javascript" src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
