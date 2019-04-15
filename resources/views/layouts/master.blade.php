@@ -106,6 +106,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             @if (Auth::user()->hasRole('Administrador'))
             <a class="collapse-item" href="{{ route('register') }}">Registro</a>
+            <a class="collapse-item" href="{{ route('papelera') }}">Papelera</a>
             @endif
             <div class="collapse-divider"></div>
           </div>

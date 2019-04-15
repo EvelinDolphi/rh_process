@@ -58,6 +58,12 @@ Route::middleware([ 'auth','role:Usuario,Administrador'])->group(function (){
     Route::get('datosempresa', 'HomeController@datosempresa')
              ->name('datosempresa');
 
+    Route::post('delete/employee', 'DatosController@deleteEmployee')
+              ->name('deleteemployee');
+
+    Route::get('papelera', 'EmpresaController@papeleraUsuarios')->name('papelera');
+
+
     Route::post('datosempresa', 'EmpresaController@store');
 
     Route::get('datospersonales', 'HomeController@datospersonales')

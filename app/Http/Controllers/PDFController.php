@@ -16,9 +16,6 @@ class PDFController extends Controller
       $employee= Employee::find($employeeId);
       $html= $this->selectView($formato, $employee);
 
-        // $view = \View::make('bancomer');
-        // $html = $view->render();
-
         $pdf = new TCPDF();
         $pdf::SetTitle('Formato');
         $pdf::AddPage();
@@ -41,6 +38,7 @@ class PDFController extends Controller
             ]);
             return $view->render();
             break;
+
             case 'soriana':
             $fecha = date("F j, Y");
             $viewS = \View::make('soriana', [
@@ -48,8 +46,8 @@ class PDFController extends Controller
               'names' => strtoupper("C. ".$employee->name." ".$employee->first_lastname." ".$employee->second_lastname),
             ]);
             return $viewS->render();
-
               break;
+
               case 'cityfresko':
               $fecha = date("F j, Y");
               $viewF = \View::make('cityfresko', [
@@ -61,6 +59,7 @@ class PDFController extends Controller
               ]);
               return $viewF->render();
                 break;
+
                 case 'cartapatronal':
                 $fecha = date("F j, Y");
                 $place = $employee->hire->place;
@@ -76,6 +75,7 @@ class PDFController extends Controller
                 ]);
                 return $viewPA->render();
                   break;
+
                   case 'expediente':
                   $address = $employee->address;
                   $place = $employee->hire->place;
@@ -94,6 +94,7 @@ class PDFController extends Controller
                   ]);
                   return $viewE->render();
                     break;
+
                     case 'waltmart':
                     $fecha = date("F j, Y");
                     $viewF = \View::make('waltmart', [

@@ -38,6 +38,11 @@ class EmpresaController extends Controller
 
     }
 
+    public function papeleraUsuarios(){
+      $employees = Employee::all();
+      return view('papelera')->with('employees', $employees);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

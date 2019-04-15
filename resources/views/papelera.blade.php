@@ -6,8 +6,7 @@
 
 
   <div class="container-fluid">
-    <h1 class="h3 mb-2 text-gray-900">Lista Empleados</h1>
-    <p class="mb-4">Aqui en esta secion podras imprimir el formato que tu desees, pero antes debiste de haber guardado los datos del empleado.</p>
+    <h1 class="h3 mb-2 text-gray-900">Lista Empleados Eliminados</h1>
     <div class="card shadow mb-4">
       <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Datos</h6>
@@ -25,15 +24,13 @@
             <th scope="col">Nombre</th>
             <th scope="col">Apellido Paterno</th>
             <th scope="col">Apellido Materno</th>
-            <th scope="col">Eliminar</th>
-            <th scope="col">Formatos</th>
           </tr>
         </thead>
         <br>
           <tbody>
             {{-- <div class="form"> --}}
         @foreach ($employees as $employee)
-          @if ($employee->active == true)
+          @if ($employee->active == false)
             <tr>
               <th scope="row">{{ $employee->numero_empleado}}</th>
               <td>{{ $employee->name}}</td>
@@ -43,12 +40,12 @@
                 <form action="{{route('deleteemployee')}}" method="POST">
                   @csrf
                   <input type="hidden" name="id" value="{{$employee->id}}">
-                  <button type="submit" class="btn btn-danger btn-xs">Eliminar</button>
+                  <button type="submit" class="btn btn-primary btn-xs">Recuperar</button>
                 </form>
 
               </td>
               <td>
-                <div class= " btn btn-primary btn-sm float-right">
+                {{-- <div class= " btn btn-primary btn-sm float-right">
                   <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Imprimir
                   </button>
@@ -60,7 +57,7 @@
                   <a class="dropdown-item" href="{{ route('formato', ['formato'=> 'cartapatronal', 'employee'=> $employee->id]) }}">CARTA PATRONAL</a>
                   <a class="dropdown-item" href="{{ route('formato', ['formato'=> 'expediente', 'employee'=> $employee->id]) }}">EXPEDIENTE</a>
                 </div>
-                </div>
+                </div> --}}
 
               </td>
 

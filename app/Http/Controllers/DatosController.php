@@ -200,7 +200,19 @@ class DatosController extends Controller
      */
     public function edit($id)
     {
-        //
+
+    }
+
+    public function deleteEmployee(Request $request){
+      $id = $request->id;
+      $employee= Employee::findOrFail($id);
+      if($employee->active == true){
+        $employee->active = false;
+      }else{
+        $employee->active = true;
+      }
+      $employee->save();
+      return redirect()->route('listaempleados', 'Todos');
     }
 
     /**

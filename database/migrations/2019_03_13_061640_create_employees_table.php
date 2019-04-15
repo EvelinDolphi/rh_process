@@ -25,6 +25,7 @@ class CreateEmployeesTable extends Migration
             $table->datetime('birthdate')->nullable($value = true);
             $table->string('numero_seguro', 15)->nullable($value = true);
             $table->string('curp', 35)->nullable($value = true);
+            $table->boolean('active')->default(true);
             $table->string('rfc', 35)->nullable($value = true);
             $table->timestamps();
 
