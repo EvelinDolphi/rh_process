@@ -15,6 +15,9 @@ class CreateCivilsTable extends Migration
     {
         Schema::create('civils', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre_esposa', 50)->nullable($value = true);
+            $table->string('nombre_papa', 50)->nullable($value = true);
+            $table->string('nombre_mama', 50)->nullable($value = true);
             $table->string('soltero', 10)->nullable($value = true);
             $table->string('casado', 10)->nullable($value = true);
             $table->string('viudo', 10)->nullable($value = true);

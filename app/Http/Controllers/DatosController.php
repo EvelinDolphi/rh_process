@@ -100,6 +100,9 @@ class DatosController extends Controller
       $civil->viudo = $data['Civil'];
       $civil->separado = $data['Civil'];
       $civil->numero_hijos = $data['NHijos'];
+      $civil->nombre_esposa = $data['NEsposa'];
+      $civil->nombre_mama = $data['NMadre'];
+      $civil->nombre_papa = $data['NPadre'];
 
       return $civil;
 
@@ -124,6 +127,9 @@ class DatosController extends Controller
          'Curp' => 'string',
          'RFC' => 'string',
          'NHijos' => 'string',
+         'NEsposa' => 'string',
+         'NMadre' => 'string',
+         'NPadre' => 'string',
          'ContactAvenue' => 'required',
          'ContactLote' => 'required',
          'ContactManzana' => 'required',
