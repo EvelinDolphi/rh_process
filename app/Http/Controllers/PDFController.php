@@ -79,18 +79,43 @@ class PDFController extends Controller
                   case 'expediente':
                   $address = $employee->address;
                   $place = $employee->hire->place;
+                  $department = $employee->hire->place->department;
+                  $salary = $employee->hire->salary;
+                  $emergency = $employee->emergency;
+                  $emergencyA = $emergency->address;
+                  $civil = $employee->civil;
+                  $bank = $employee->bank;
                   $fecha = date("F j, Y");
                   $viewE = \View::make('expediente', [
                     'dateE' => $this->traducirFecha($fecha),
-                    'nameE' => strtoupper("C. ".$employee->name." ".$employee->first_lastname." ".$employee->second_lastname),
+                    'nameE' => strtoupper(" ".$employee->name." ".$employee->first_lastname." ".$employee->second_lastname),
                     'rfcE' => strtoupper($employee->rfc),
                     'seguroE' => strtoupper($employee->numero_seguro),
                     'curpE' => strtoupper($employee->curp),
                     'fecha_altaE' => strtoupper($employee->fecha_alta),
-                    'cumpleaños' => strtoupper($employee->birthdate),
+                    'cumpleaños' => strtoupper(" ".$employee->birthdate),
                     'antiguedad' => strtoupper($employee->antiguedad),
-                    'address' => strtoupper("CALLE ".$address->street." # ".$address->number." MZN. ".$address->manzana." LT. ".$address->lote." COLONIA ".$address
-                    ->colonia." , ".$address->municipality." , ".$address->state." ".$address->codigo_postal),
+                    'address' => strtoupper(" ".$address->street),
+                    'addressN' => strtoupper(" # ".$address->number),
+                    'addressC' => strtoupper(" ".$address->colonia),
+                    'addressM' => strtoupper("  ".$address->municipality),
+                    'addressCO' => strtoupper(" ".$address->codigo_postal),
+                    'addressES' => strtoupper(" ".$address->state),
+                    'numero_hijos' => strtoupper(" ".$civil->numero_hijos),
+                    'bank' => strtoupper(" ".$bank->numero_cuenta),
+                    'area' => strtoupper(" ".$place->area),
+                    'delegacion' => strtoupper(" ".$place->delegacion),
+                    'department' => strtoupper(" ".$department->nombre),
+                    'estado_civil' => strtoupper(" ".$civil->soltero),
+                    'sueldo' => strtoupper(" ".$salary->sueldo_contratacion),
+                    'emergency' => strtoupper(" ".$emergency->nombre),
+                    'addressE' => strtoupper(" ".$emergencyA->street),
+                    'addressNE' => strtoupper(" # ".$emergencyA->number),
+                    'addressCE' => strtoupper(" ".$emergencyA->colonia),
+                    'addressME' => strtoupper("  ".$emergencyA->municipality),
+                    'addressCOE' => strtoupper(" ".$emergencyA->codigo_postal),
+                    'addressESE' => strtoupper(" ".$emergencyA->state),
+
                   ]);
                   return $viewE->render();
                     break;
@@ -105,6 +130,23 @@ class PDFController extends Controller
 
                     ]);
                     return $viewF->render();
+                    break;
+
+                    case 'alta':
+                    $fecha = date("F j, Y");
+                    $place = $employee->hire->place;
+                    $viewEm = \View::make('alta', [
+                      'datespa' => $this->traducirFecha($fecha),
+                      'nameExpediente' => strtoupper("C. ".$employee->name." ".$employee->first_lastname." ".$employee->second_lastname),
+                      'rfcExpediente' => strtoupper($employee->rfc),
+                      'seguroExpediente' => strtoupper($employee->numero_seguro),
+                      'curpExpediente' => strtoupper($employee->curp),
+                      'fecha_altaExpediente' => strtoupper($employee->fecha_alta),
+                      'puestoExpediente' => strtoupper($place->area),
+
+                    ]);
+                    return $viewEm->render();
+
           default:
             // code...
             break;
