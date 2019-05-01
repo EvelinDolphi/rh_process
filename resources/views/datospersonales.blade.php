@@ -126,6 +126,27 @@
           Bien echo!
         </div>
       </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom05">Nombre de la esposa:</label>
+        <input name="NEsposa" type="text" class="form-control" id="NEsposa" placeholder="nombre_esposa" required>
+        <div class="valid-feedback">
+          Bien echo!
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom05">Nombre del padre:</label>
+        <input name="NPadre" type="text" class="form-control" id="NPadre" placeholder="nombre_papa" required>
+        <div class="valid-feedback">
+          Bien echo!
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom05">Numero de la madre:</label>
+        <input name="NMadre" type="text" class="form-control" id="NMadre" placeholder="nombre_mama" required>
+        <div class="valid-feedback">
+          Bien echo!
+        </div>
+      </div>
     </div>
 
     <br>
@@ -312,6 +333,9 @@ function llenar() {
   $("#Antiguedad").val('31/03/2019');
   $("#Birthdate").val('31/03/2019');
   $("#NHijos").val('2');
+  $("#NEsposa").val('Valentina Espinoza');
+  $("#NPadre").val('Joaquin quintanilla');
+  $("#NMadre").val('Ramira');
   $("#ContactAvenue").val('Rancho Viejo');
   $("#ContactLote").val('18');
   $("#ContactManzana").val('3');

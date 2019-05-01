@@ -1,79 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Caratula de expediente</title>
-    <link rel="stylesheet" href="style.css" media="all" />
-  </head>
-  <body>
-    <header class="clearfix">
-      <div id="logo">
-        <img src="Puratos.png">
-      </div>
-      <div id="company">
-        <h2 class="name">Caratula de expediente</h2>
-        <div id="logo">
-          <img src="Sin título-1.png">
-        </div>
-      </div>
-      </div>
-    </header>
-    <main>
-      <!-- <div id="details" class="clearfix"> -->
-        <div id="invoice">
-          <h2>Numero de expediente:</h2>
-        </div>
-      </div>
-
-<style type="text/css">
-	table.tableizer-table {
-		font-size: 12px;
-		border: 1px solid #CCC;
-		font-family: Arial, Helvetica, sans-serif;
-	}
-	.tableizer-table td {
-		padding: 4px;
-		margin: 3px;
-		border: 1px solid #CCC;
-	}
-	.tableizer-table th {
-		background-color: #80070B;
-		color: #FFF;
-		font-weight: bold;
-	}
-</style>
-<table class="tableizer-table">
-<thead><tr class="tableizer-firstrow"><th></th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr></thead><tbody>
- <tr><td>NOMBRE:{{$nameE}}</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>FECHA DE NACIMIENTO:</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>DOMICILIO:</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>CALLE</td><td>&nbsp;</td><td>NÚMERO</td><td>&nbsp;</td><td>INT.</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>COLONIA</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>CÓDIGO POSTAL</td><td>&nbsp;</td><td>&nbsp;</td><td>DELEGACIÓN</td><td>&nbsp;</td><td>ESTADO O MUNICIPIO</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>TELÉFONO:</td><td>&nbsp;</td><td>&nbsp;</td><td>CELULAR:</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>ESTADO CIVIL:</td><td>&nbsp;</td><td>&nbsp;</td><td>CASADO  ()</td><td>UNIÓN LIBRE  (X)</td><td>DIVORCIADO  ( ) </td><td>SOLTERO  ()</td></tr>
- <tr><td>NÚMERO DE HIJOS:</td><td>&nbsp;</td><td>1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>IMSS:</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Número de Cuenta de Nómina</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>CURP:</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>RFC:</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>PUESTO:</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>ÁREA:</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>DELEGACION:</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>JEFE INMEDIATO:</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>FECHA DE INGRESO:</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>SUELDO DE CONTRATACIÓN:  </td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>FECHA DE FIRMA DE CONTRATO:</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>FECHA DE FIRMA DE CONTRATO POR TIEMPO INDEFINIDO:</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>STATUS:</td><td>ALTA ( x )</td><td>BAJA  (  )</td><td>VOLUNTARIA  (  )</td><td>RESICIÓN  (  )</td><td>DEMANDA  (  )</td><td>PENAL  (  )</td></tr>
- <tr><td>Observaciones:</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>  </td></tr>
- <tr><td>En caso de Emergencia dar Aviso a: </td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>Tel/Cel : </td><td>&nbsp;</td></tr>
- <tr><td>Dirección:</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td></td></tr>
-</tbody></table>
+<img src="{{asset('img/Puratos.png')}}" width="180" alt="">
+{{-- <img src="{{asset('img/Puratos.png')}}" class="rounded float-right" alt="..."> --}}
+<br>
+<br>
+<div id="company">
+  <h2  class="name"><p align= 'center'>CARÁTULA DE EXPEDIENTE
+  </p></h2>
+  <h2>Numero de expediente:</h2>
+</div>
+<table border="1">
+  <tbody>
+    <tr>
+      <th scope="row">Nombre:</th>
+      <td colspan="2">{{$nameE}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Fecha de Nacimiento:</th>
+      <td colspan="2">{{$cumpleaños}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Dirección:</th>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <th scope="col">Calle:</th>
+      <th scope="col">Número:</th>
+      <th scope="col">Colonia:</th>
+    </tr>
+    <tr>
+      <th scope="col">{{$address}}</th>
+      <th scope="col">{{$addressN}}</th>
+      <th scope="col">{{$addressC}}</th>
+    </tr>
+      <tr>
+        <th scope="col">Código Postal:</th>
+        <th scope="col">Municipio:</th>
+        <th scope="col">Estado:</th>
+      </tr>
+    <tr>
+      <th scope="col">{{$addressCO}}</th>
+      <th scope="col">{{$addressM}}</th>
+      <th scope="col">{{$addressES}}</th>
+    </tr>
+      <tr>
+        <th scope="col">Teléfono:</th>
+        <th scope="col">Estado Civil:</th>
+        <th scope="col">Número de hijos:</th>
+      </tr>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">{{$estado_civil}}</th>
+      <th scope="col">{{$numero_hijos}}</th>
+    </tr>
+    <tr>
+      <th scope="row">IMMS:</th>
+      <td colspan="2">{{$seguroE}}</td>
+    </tr>
+    <tr>
+      <th scope="row">CURP:</th>
+      <td colspan="2">{{$curpE}}</td>
+    </tr>
+    <tr>
+      <th scope="row">RFC:</th>
+      <td colspan="2">{{$rfcE}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Número de cuenta nomina:</th>
+      <td colspan="2">{{$bank}}</td>
+    </tr>
+      <tr>
+        <th scope="col">Puesto:</th>
+        <th scope="col">Área:</th>
+        <th scope="col">Delegación:</th>
+      </tr>
+    <tr>
+      <th scope="col">{{$department}}</th>
+      <th scope="col">{{$area}}</th>
+      <th scope="col">{{$delegacion}}</th>
+    </tr>
+    <tr>
+      <th scope="row">Jefe Inmediato:</th>
+      <td colspan="2"></td>
+    </tr>
+      <tr>
+        <th scope="col">Fecha de Ingreso:</th>
+        <th scope="col">Sueldo de contratación</th>
+        <th scope="col">Status:</th>
+      </tr>
+    <tr>
+      <th scope="col">{{$fecha_altaE}}</th>
+      <th scope="col">{{$sueldo}}</th>
+      <th scope="col"></th>
+    </tr>
+    <tr>
+      <th scope="row">En caso de emergencia avisar a:</th>
+      <td colspan="2">{{$emergency}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Dirección:</th>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <th scope="col">Calle:</th>
+      <th scope="col">Número:</th>
+      <th scope="col">Colonia:</th>
+    </tr>
+    <tr>
+      <th scope="col">{{$addressE}}</th>
+      <th scope="col">{{$addressNE}}</th>
+      <th scope="col">{{$addressCE}}</th>
+    </tr>
+      <tr>
+        <th scope="col">Código Postal:</th>
+        <th scope="col">Municipio:</th>
+        <th scope="col">Estado:</th>
+      </tr>
+    <tr>
+      <th scope="col">{{$addressCOE}}</th>
+      <th scope="col">{{$addressME}}</th>
+      <th scope="col">{{$addressESE}}</th>
+    </tr>
+  </tbody>
+</table>

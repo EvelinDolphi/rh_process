@@ -59,6 +59,7 @@
                   <a class="dropdown-item" href="{{ route('formato', ['formato'=> 'waltmart', 'employee'=> $employee->id]) }}">CARTA WALTMART</a>
                   <a class="dropdown-item" href="{{ route('formato', ['formato'=> 'cartapatronal', 'employee'=> $employee->id]) }}">CARTA PATRONAL</a>
                   <a class="dropdown-item" href="{{ route('formato', ['formato'=> 'expediente', 'employee'=> $employee->id]) }}">EXPEDIENTE</a>
+                    <a class="dropdown-item" href="{{ route('formato', ['formato'=> 'alta', 'employee'=> $employee->id]) }}">ALTA IMMS</a>
                 </div>
                 </div>
 
