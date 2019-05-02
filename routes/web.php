@@ -18,19 +18,18 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-//   Route::get('/', function () {
-// $role = App\Role::all();
-//       return dd($role);
-//   });
+//
+Route::post('formatoFecha', 'PDFController@index')
+    ->name('formatoFecha');
 
-Route::get('documento', function () {
-  $employee= App\Employee::find(1);
-  dd($employee->address);
-});
-
-Route::get('formato', 'PDFController@index')
-          ->name('formato');
-
+Route::get('formato', function () {
+  $formato = request()->formato;
+  $employeeId = (int)request()->employee;
+  return view('date', [
+    'formato' => $formato,
+    'employeeId' => $employeeId
+  ]);
+})->name('formato');
 
 Route::middleware([ 'auth','role:Usuario,Administrador'])->group(function (){
   // Rutas para acceso a usuarios y administradores que halla iniciado sesion

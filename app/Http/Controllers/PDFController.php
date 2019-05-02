@@ -14,7 +14,7 @@ class PDFController extends Controller
       $formato = $request->formato;
       $employeeId= (int)$request->employee;
       $employee= Employee::find($employeeId);
-      $html= $this->selectView($formato, $employee);
+      $html= $this->selectView($formato, $employee, $request->date);
 
         $pdf = new TCPDF();
         $pdf::SetTitle('Formato');
@@ -23,11 +23,11 @@ class PDFController extends Controller
         $pdf::Output('Formato.pdf');
     }
 
-    public function selectView($formato, Employee $employee)
+    public function selectView($formato, Employee $employee, $fecha)
     {
         switch ($formato) {
           case 'bancomer':
-            $fecha = date("F j, Y");
+
             $address = $employee->address;
             $view = \View::make('bancomer', [
               'date' => $this->traducirFecha($fecha),
@@ -40,7 +40,7 @@ class PDFController extends Controller
             break;
 
             case 'soriana':
-            $fecha = date("F j, Y");
+
             $viewS = \View::make('soriana', [
               'dates' => $this->traducirFecha($fecha),
               'names' => strtoupper("C. ".$employee->name." ".$employee->first_lastname." ".$employee->second_lastname),
@@ -49,7 +49,7 @@ class PDFController extends Controller
               break;
 
               case 'cityfresko':
-              $fecha = date("F j, Y");
+
               $viewF = \View::make('cityfresko', [
                 'datesp' => $this->traducirFecha($fecha),
                 'namesp' => strtoupper("C. ".$employee->name." ".$employee->first_lastname." ".$employee->second_lastname),
@@ -61,7 +61,7 @@ class PDFController extends Controller
                 break;
 
                 case 'cartapatronal':
-                $fecha = date("F j, Y");
+
                 $place = $employee->hire->place;
                 $viewPA = \View::make('cartapatronal', [
                   'datespa' => $this->traducirFecha($fecha),
@@ -79,13 +79,13 @@ class PDFController extends Controller
                   case 'expediente':
                   $address = $employee->address;
                   $place = $employee->hire->place;
-                  $department = $employee->hire->place->department;
+                  $department = $place->department;
                   $salary = $employee->hire->salary;
                   $emergency = $employee->emergency;
                   $emergencyA = $emergency->address;
                   $civil = $employee->civil;
                   $bank = $employee->bank;
-                  $fecha = date("F j, Y");
+
                   $viewE = \View::make('expediente', [
                     'dateE' => $this->traducirFecha($fecha),
                     'nameE' => strtoupper(" ".$employee->name." ".$employee->first_lastname." ".$employee->second_lastname),
@@ -121,7 +121,7 @@ class PDFController extends Controller
                     break;
 
                     case 'waltmart':
-                    $fecha = date("F j, Y");
+
                     $viewF = \View::make('waltmart', [
                       'dateW' => $this->traducirFecha($fecha),
                       'nameW' => strtoupper("C. ".$employee->name." ".$employee->first_lastname." ".$employee->second_lastname),
@@ -133,7 +133,6 @@ class PDFController extends Controller
                     break;
 
                     case 'alta':
-                    $fecha = date("F j, Y");
                     $place = $employee->hire->place;
                     $viewEm = \View::make('alta', [
                       'datespa' => $this->traducirFecha($fecha),
