@@ -31,11 +31,21 @@
     <br>
     <br>
     <li class="media">
-      <img class="intro-img img-fluid mb-6 mb-lg-0 rounded" src="img/1.jpg" alt="...">
+      <img class="intro-img img-fluid mb-6 mb-lg-0 rounded" src="img/empleados.jpg" alt="...">
       <div class="media-body">
-        <h5 style="color:orange;" class="mt-3 mb-1"><p align='center'>LISTADO DE OPCIONES</p></h5>
+        <h5 style="color:orange;" class="mt-3 mb-1"><p align='center'>EMPLEADOS</p></h5>
         Este software esta dividido por diferentes modulos y uno de ellos, es el modulo de "Empleados" en el que el usuario podra elegir de dos opciones la cual se
-        les proporciona
+        les proporciona, las opciones son "Ingresar empleado" y "Lista de empleados"
+      </div>
+    </li>
+    <br>
+    <br>
+    <br>
+    <li class="media">
+      <img class="intro-img img-fluid mb-6 mb-lg-0 rounded" src="img/vigencias.jpg" alt="...">
+      <div class="media-body">
+        <h5 style="color:orange;" class="mt-3 mb-1"><p align='center'>VIGENCIAS</p></h5>
+        El siguiente modulo es el de "Vigencias", este modulo es para oder ingresar una vigencia y pueda estar de respaldo como una base de datos pero en un software y automaticamente aparecera en "Lista de vigencias"
       </div>
     </li>
     <br>
