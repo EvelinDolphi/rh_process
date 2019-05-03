@@ -127,6 +127,7 @@ class EmpresaController extends Controller
          'JefeIm' => 'required',
          'Departa' => 'required',
          'Area' => 'required',
+         'Status' => 'required',
          'Delega' => 'required',
          'SalarioB' => 'required',
          'SalarioC' => 'required',
@@ -148,22 +149,29 @@ class EmpresaController extends Controller
       if($employee =Employee::findOrFail($request->employeeId)){
         $status = $this->createStatus($request->all());
         $status->save();
+
         $bank = $this->createBank($request->all());
         $bank->save();
+
         $hire = $this->createHire($request->all());
         $hire->save();
+
         $salary = $this->createSalary($request->all());
         $salary->hire()->associate($hire);
         $salary->save();
+
         $department = $this->createDepartment($request->all());
         $department->save();
+
         $boss = $this->createBoss($request->all());
         $boss->department()->associate($department);
         $boss->save();
+
         $place = $this->createPlace($request->all());
         $place->hire()->associate($hire);
         $place->department()->associate($boss);
         $place->save();
+
         return redirect()->route('listaempleados','todos');
       }else{
         abort(404);

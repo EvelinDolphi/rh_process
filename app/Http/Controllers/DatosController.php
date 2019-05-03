@@ -124,6 +124,8 @@ class DatosController extends Controller
          'Date' => 'date',
          'Antiguedad' => 'date',
          'Birthdate' => 'date',
+         'Sexo' => 'required',
+         'Civil' => 'required',
          'Curp' => 'string',
          'RFC' => 'string',
          'NHijos' => 'string',
@@ -162,29 +164,27 @@ class DatosController extends Controller
 
       $employeeAddress = $this->createAddress($request->all());
       $employeeAddress->save();
+
       $employee = $this->createEmployee($request->all());
       $employee->address()->associate($employeeAddress);
-
       $employee->save();
 
       $emerAddress = $this->createEmergencyAddress($request->all());
       $emerAddress->save();
+
       $emergency = $this->createEmergency($request->all());
       $emergency->address()->associate($emerAddress);
       $emergency->employee()->associate($employee);
 
       $emergency->save();
 
-      $employeeCivil = $this->createEmployee($request->all());
-      $employeeCivil->save();
       $civil_status = $this->createCivil($request->all());
-      $civil_status->employee()->associate($employeeCivil);
+      $civil_status->employee()->associate($employee);
 
       $civil_status->save();
 
       return view('datosempresa')->with('employee', $employee);
 
-        // dd($request->all());
     }
 
     /**

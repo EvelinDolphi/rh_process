@@ -6,6 +6,16 @@
 
   <h4 style="color:orange;">Datos Personales</h4>
 
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <button type="button" name="button" onclick="llenar();">Llenar datos</button>
   <br>
   <form  method="post" action="{{ route('datospersonales') }}" class="needs-validation" novalidate>
