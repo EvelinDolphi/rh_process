@@ -132,19 +132,49 @@ class PDFController extends Controller
                     return $viewF->render();
                     break;
 
-                    case 'alta':
-                    $place = $employee->hire->place;
-                    $viewEm = \View::make('alta', [
-                      'datespa' => $this->traducirFecha($fecha),
-                      'nameExpediente' => strtoupper("C. ".$employee->name." ".$employee->first_lastname." ".$employee->second_lastname),
-                      'rfcExpediente' => strtoupper($employee->rfc),
-                      'seguroExpediente' => strtoupper($employee->numero_seguro),
-                      'curpExpediente' => strtoupper($employee->curp),
-                      'fecha_altaExpediente' => strtoupper($employee->fecha_alta),
-                      'puestoExpediente' => strtoupper($place->area),
+
+                      case 'alta':
+
+                      $address = $employee->address;
+                      $place = $employee->hire->place;
+                      $department = $employee->hire->place->department;
+                      $salary = $employee->hire->salary;
+                      $emergency = $employee->emergency;
+                      $emergencyA = $emergency->address;
+                      $civil = $employee->civil;
+                      $bank = $employee->bank;
+                      $fecha = date("F j, Y");
+                      $viewA = \View::make('alta', [
+                        'dateElaboracion' => $this->traducirFecha($fecha),
+                        'nameEm' => strtoupper(" ".$employee->name),
+                        'paterno' => strtoupper(" ".$employee->first_lastname),
+                        'materno' => strtoupper(" ".$employee->second_lastname),
+                        'rfcEm' => strtoupper(" ".$employee->rfc),
+                        'seguroEm' => strtoupper(" ".$employee->numero_seguro),
+                        'curpEm' => strtoupper(" ".$employee->curp),
+                        'fecha_altaEm' => strtoupper(" ".$employee->fecha_alta),
+                        'cumpleañosEm' => strtoupper(" ".$employee->birthdate),
+                        'antiguedadEm' => strtoupper($employee->antiguedad),
+                        'addressNu' => strtoupper(" # ".$address->number),
+                        'addressCol' => strtoupper(" ".$address->colonia),
+                        'addressMuni' => strtoupper("  ".$address->municipality),
+                        'addressCO' => strtoupper(" ".$address->codigo_postal),
+                        'addressES' => strtoupper(" ".$address->state),
+                        'numero_hijos' => strtoupper(" ".$civil->numero_hijos),
+                        'esposa' => strtoupper(" ".$civil->nombre_esposa),
+                        'padre' => strtoupper(" ".$civil->nombre_papa),
+                        'madre' => strtoupper(" ".$civil->nombre_mama),
+                        'area' => strtoupper(" ".$place->area),
+                        'delegacion' => strtoupper(" ".$place->delegacion),
+                        'departmentA' => strtoupper(" ".$department->nombre),
+                        'estado_civilE' => strtoupper(" ".$civil->soltero),
+                        'sueldo_co' => strtoupper(" $ ".$salary->salario_cotizacion),
+                        'salario_base' => strtoupper(" $ ".$salary->salario_base),
+                        'sexo' => strtoupper(" ".$employee->sexo),
 
                     ]);
-                    return $viewEm->render();
+                        return $viewA->render();
+                        break;
 
           default:
             // code...

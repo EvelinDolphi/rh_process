@@ -6,7 +6,7 @@
 
   <body class="bg-gradient-danger">
 
-    <div class="container">
+    <div class="container" align='center'>
       <div class="justify-content-center">
       <div class="card o-hidden border-0 shadow-lg my-5">
         <div class="card-body p-0">

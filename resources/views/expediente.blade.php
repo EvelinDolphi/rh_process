@@ -1,5 +1,5 @@
 <img src="{{asset('img/Puratos.png')}}" width="180" alt="">
-{{-- <img src="{{asset('img/Puratos.png')}}" class="rounded float-right" alt="..."> --}}
+<img src="{{asset('img/lineas.jpg')}}" ALIGN=RIGHT width="350" height="50" alt="...">
 <br>
 <br>
 <div id="company">
@@ -121,3 +121,9 @@
     </tr>
   </tbody>
 </table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

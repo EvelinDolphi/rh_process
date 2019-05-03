@@ -82,6 +82,8 @@
           Bien echo!
         </div>
       </div>
+      <br>
+      <br>
       <div class="col-md-12 mb-3">
       <p>Status:
         <br>
