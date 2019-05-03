@@ -121,28 +121,28 @@
       </p>
       <div class="col-md-4 mb-3">
         <label for="validationCustom05">Numero de hijos:</label>
-        <input name="NHijos" type="text" class="form-control" id="NHijos" placeholder="Numero_Hijos" required>
+        <input name="NHijos" type="text" class="form-control" id="NHijos" placeholder="Numero Hijos" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationCustom05">Nombre de la esposa:</label>
-        <input name="NEsposa" type="text" class="form-control" id="NEsposa" placeholder="nombre_esposa" required>
+        <input name="NEsposa" type="text" class="form-control" id="NEsposa" placeholder="Nombre Esposa" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationCustom05">Nombre del padre:</label>
-        <input name="NPadre" type="text" class="form-control" id="NPadre" placeholder="nombre_papa" required>
+        <input name="NPadre" type="text" class="form-control" id="NPadre" placeholder="Nombre Papa" required>
         <div class="valid-feedback">
           Bien echo!
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationCustom05">Numero de la madre:</label>
-        <input name="NMadre" type="text" class="form-control" id="NMadre" placeholder="nombre_mama" required>
+        <input name="NMadre" type="text" class="form-control" id="NMadre" placeholder="Nombre Mama" required>
         <div class="valid-feedback">
           Bien echo!
         </div>

@@ -81,12 +81,15 @@ class ExampleSeeder extends Seeder
 
       //Creación de un estado civil
       $civil_status = new Civil();
+      $civil_status->nombre_esposa = 'Valentina sanchez';
+      $civil_status->nombre_papa = 'Agustin sanchez';
+      $civil_status->nombre_mama = 'Valeria escocia';
       $civil_status->soltero = 'SI';
       $civil_status->casado = 'NO';
       $civil_status->viudo = 'NO';
       $civil_status->divorciado = 'NO';
       $civil_status->separado = 'NO';
-      $civil_status->numero_hijos = '0';
+      $civil_status->numero_hijos = '2';
       $civil_status->employee()->associate($employee);
       $civil_status->save();
 
@@ -192,12 +195,15 @@ class ExampleSeeder extends Seeder
 
       //Creación de un estado civil
       $civil_status = new Civil();
+      $civil_status->nombre_esposa = 'Carla Hernandez';
+      $civil_status->nombre_papa = 'Valentin sanchez';
+      $civil_status->nombre_mama = 'Estefany escocia';
       $civil_status->soltero = 'SI';
       $civil_status->casado = 'NO';
       $civil_status->viudo = 'NO';
       $civil_status->divorciado = 'NO';
       $civil_status->separado = 'NO';
-      $civil_status->numero_hijos = '0';
+      $civil_status->numero_hijos = '2';
       $civil_status->employee()->associate($employee);
       $civil_status->save();
 
@@ -303,12 +309,15 @@ class ExampleSeeder extends Seeder
 
       //Creación de un estado civil
       $civil_status = new Civil();
-      $civil_status->soltero = 'NO';
-      $civil_status->casado = 'SI';
+      $civil_status->nombre_esposa = 'Marianel Castillo';
+      $civil_status->nombre_papa = 'Carlos sanchez';
+      $civil_status->nombre_mama = 'Karina escocia';
+      $civil_status->soltero = 'SI';
+      $civil_status->casado = 'NO';
       $civil_status->viudo = 'NO';
       $civil_status->divorciado = 'NO';
       $civil_status->separado = 'NO';
-      $civil_status->numero_hijos = '0';
+      $civil_status->numero_hijos = '2';
       $civil_status->employee()->associate($employee);
       $civil_status->save();
 
@@ -415,12 +424,15 @@ class ExampleSeeder extends Seeder
 
       //Creación de un estado civil
       $civil_status = new Civil();
-      $civil_status->soltero = 'NO';
+      $civil_status->nombre_esposa = 'Marlene Gutierrez';
+      $civil_status->nombre_papa = 'Jorge Castañeda';
+      $civil_status->nombre_mama = 'Yair Estrada';
+      $civil_status->soltero = 'SI';
       $civil_status->casado = 'NO';
-      $civil_status->viudo = 'SI';
+      $civil_status->viudo = 'NO';
       $civil_status->divorciado = 'NO';
       $civil_status->separado = 'NO';
-      $civil_status->numero_hijos = '0';
+      $civil_status->numero_hijos = '2';
       $civil_status->employee()->associate($employee);
       $civil_status->save();
 
@@ -472,117 +484,117 @@ class ExampleSeeder extends Seeder
       $place->save();
 
       //----------------------------------------------------------------------
-
-      $address = new Address();
-      $address->avenue = 'regla';
-      $address->lote = '2';
-      $address->manzana = '5';
-      $address->number = '235';
-      $address->street = 'regla';
-      $address->colonia = 'Paseos del Pedregal';
-      $address->municipality = 'tizayuca';
-      $address->state = 'hidalgo';
-      $address->codigo_postal = '43810';
-      $address->save();
-
-      //Recuperando la dirección recientemente guardada
-      $address = Address::find(1);
-
-      //Creación de un empleado
-      $employee = new Employee();
-      $employee->numero_empleado='12';
-      $employee->name='Laura';
-      $employee->first_lastname= 'Hernandez';
-      $employee->second_lastname= 'Gutierrez';
-      $employee->fecha_alta= new Datetime();
-      $employee->antiguedad= new Datetime();
-      $employee->sexo= 'Mujer';
-      $employee->birthdate=new Datetime();
-      $employee->numero_seguro= '21321313';
-      $employee->curp= 'HASHDSAD12';
-      $employee->rfc='ASDASDS1312';
-      $employee->address()->associate($address);
-      $employee->save();
-
-      $employee = Employee::where('name', 'Laura')->first();
-
-      //Creación de un contacto de emergencia
-      $emergency = new Emergency();
-      $emergency->nombre = 'Florentina Gutierrez';
-      $emergency->telefono = '1212131313';
-      $emergency->address()->associate($address);
-      $emergency->employee()->associate($employee);
-      $emergency->save();
-
-      //Creación de un estatus
-      $status = new Status();
-      $status->alta = 'SI';
-      $status->baja = 'SI';
-      $status->voluntaria = 'SI';
-      $status->resicion = 'NO';
-      $status->demanda = 'SI';
-      $status->penal = 'SI';
-      //Asignación de un estatus a un empleado
-      $status->employee()->associate($employee);
-      $status->save();
-
-      //Creación de un estado civil
-      $civil_status = new Civil();
-      $civil_status->soltero = 'SI';
-      $civil_status->casado = 'NO';
-      $civil_status->viudo = 'NO';
-      $civil_status->divorciado = 'NO';
-      $civil_status->separado = 'NO';
-      $civil_status->numero_hijos = '0';
-      $civil_status->employee()->associate($employee);
-      $civil_status->save();
-
-      //Creación de un banco
-      $bank = new Bank();
-      $bank->name_bank = 'Santander';
-      $bank->clabe_interbancaria = '12131';
-      $bank->numero_cuenta = '101012030';
-      $bank->employee()->associate($employee);
-      $bank->save();
-
-      //Creación de una contratación
-      $hire = new Hire();
-      $hire->description = 'Contratación del 2019.';
-      $hire->employee()->associate($employee);
-      $hire->save();
-
-      $hire = Hire::where('description', 'Contratación del 2019.')->first();
-
-      //Asignacion de un salario a una contratación
-      $salary = new Salary();
-      $salary->salario_base = 1500.00;
-      $salary->salario_cotizacion = 1400.00;
-      $salary->sueldo_contratacion = 1250.50;
-      $salary->hire()->associate($hire);
-      $salary->save();
-
-      //Creación de un nuevo departamento
-      $department = new Department();
-      $department->nombre = 'Departamento de Tecnologia';
-      $department->save();
-
-      $department = Department::where('nombre', 'Departamento de Tecnologia')->first();
-
-      //Creación de un jefe y asignación de departamento que esta encargado
-      $boss = new Boss();
-      $boss->nombre = 'M. Evelin Castro Pineda';
-      $boss->department()->associate($department);
-      $boss->save();
-
-      $boss = Boss::find(1);
-
-      //Asignación de un puesto a una contratación
-      $place = new Place();
-      $place->area = 'Sistemas Computacionales';
-      $place->delegacion = 'Gerente';
-      $place->hire()->associate($hire);
-      $place->department()->associate($boss);
-      $place->save();
+      // 
+      // $address = new Address();
+      // $address->avenue = 'regla';
+      // $address->lote = '2';
+      // $address->manzana = '5';
+      // $address->number = '235';
+      // $address->street = 'regla';
+      // $address->colonia = 'Paseos del Pedregal';
+      // $address->municipality = 'tizayuca';
+      // $address->state = 'hidalgo';
+      // $address->codigo_postal = '43810';
+      // $address->save();
+      //
+      // //Recuperando la dirección recientemente guardada
+      // $address = Address::find(1);
+      //
+      // //Creación de un empleado
+      // $employee = new Employee();
+      // $employee->numero_empleado='12';
+      // $employee->name='Laura';
+      // $employee->first_lastname= 'Hernandez';
+      // $employee->second_lastname= 'Gutierrez';
+      // $employee->fecha_alta= new Datetime();
+      // $employee->antiguedad= new Datetime();
+      // $employee->sexo= 'Mujer';
+      // $employee->birthdate=new Datetime();
+      // $employee->numero_seguro= '21321313';
+      // $employee->curp= 'HASHDSAD12';
+      // $employee->rfc='ASDASDS1312';
+      // $employee->address()->associate($address);
+      // $employee->save();
+      //
+      // $employee = Employee::where('name', 'Laura')->first();
+      //
+      // //Creación de un contacto de emergencia
+      // $emergency = new Emergency();
+      // $emergency->nombre = 'Florentina Gutierrez';
+      // $emergency->telefono = '1212131313';
+      // $emergency->address()->associate($address);
+      // $emergency->employee()->associate($employee);
+      // $emergency->save();
+      //
+      // //Creación de un estatus
+      // $status = new Status();
+      // $status->alta = 'SI';
+      // $status->baja = 'SI';
+      // $status->voluntaria = 'SI';
+      // $status->resicion = 'NO';
+      // $status->demanda = 'SI';
+      // $status->penal = 'SI';
+      // //Asignación de un estatus a un empleado
+      // $status->employee()->associate($employee);
+      // $status->save();
+      //
+      // //Creación de un estado civil
+      // $civil_status = new Civil();
+      // $civil_status->soltero = 'SI';
+      // $civil_status->casado = 'NO';
+      // $civil_status->viudo = 'NO';
+      // $civil_status->divorciado = 'NO';
+      // $civil_status->separado = 'NO';
+      // $civil_status->numero_hijos = '0';
+      // $civil_status->employee()->associate($employee);
+      // $civil_status->save();
+      //
+      // //Creación de un banco
+      // $bank = new Bank();
+      // $bank->name_bank = 'Santander';
+      // $bank->clabe_interbancaria = '12131';
+      // $bank->numero_cuenta = '101012030';
+      // $bank->employee()->associate($employee);
+      // $bank->save();
+      //
+      // //Creación de una contratación
+      // $hire = new Hire();
+      // $hire->description = 'Contratación del 2019.';
+      // $hire->employee()->associate($employee);
+      // $hire->save();
+      //
+      // $hire = Hire::where('description', 'Contratación del 2019.')->first();
+      //
+      // //Asignacion de un salario a una contratación
+      // $salary = new Salary();
+      // $salary->salario_base = 1500.00;
+      // $salary->salario_cotizacion = 1400.00;
+      // $salary->sueldo_contratacion = 1250.50;
+      // $salary->hire()->associate($hire);
+      // $salary->save();
+      //
+      // //Creación de un nuevo departamento
+      // $department = new Department();
+      // $department->nombre = 'Departamento de Tecnologia';
+      // $department->save();
+      //
+      // $department = Department::where('nombre', 'Departamento de Tecnologia')->first();
+      //
+      // //Creación de un jefe y asignación de departamento que esta encargado
+      // $boss = new Boss();
+      // $boss->nombre = 'M. Evelin Castro Pineda';
+      // $boss->department()->associate($department);
+      // $boss->save();
+      //
+      // $boss = Boss::find(1);
+      //
+      // //Asignación de un puesto a una contratación
+      // $place = new Place();
+      // $place->area = 'Sistemas Computacionales';
+      // $place->delegacion = 'Gerente';
+      // $place->hire()->associate($hire);
+      // $place->department()->associate($boss);
+      // $place->save();
       // _________________________________________________________________________
 
       //Datos de la aplicación
